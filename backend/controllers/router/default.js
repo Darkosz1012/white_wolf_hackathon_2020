@@ -37,9 +37,8 @@ module.exports = function(model){
             handleSuccess(res, data);
         })
     })
-    apiRoutes.get("/one", function(req, res){
+    apiRoutes.post("/login", function(req, res){
         var data = req.body || req.query;
-        console.log(req.query , req.body)
         model.findOne(data, function(err, data){
             if (err) return handleError(res,err);
             if(data.length == 0){
