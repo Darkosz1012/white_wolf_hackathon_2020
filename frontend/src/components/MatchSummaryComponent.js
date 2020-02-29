@@ -43,7 +43,7 @@ const MatchSummaryComponent = (props) => {
       setInputs(inputs => ({...inputs, [name]:inputs[name] + amount}));
   }
       return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="summaryForm">
           <label >Date:
           <input name="date" type="date" value= {inputs.date}  onChange={handleInputChange}/> 
           </label>
