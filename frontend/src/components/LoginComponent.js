@@ -1,8 +1,11 @@
 import React from 'react';
 import '../styles/components/login.scss';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { login } from '../actions/loginActions';
 
 
-export default class LoginComponent extends React.Component {
+class LoginComponent extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -24,8 +27,9 @@ export default class LoginComponent extends React.Component {
       }
   
     handleSubmit(event) {
-      alert(JSON.stringify(this.state));
+      // alert(JSON.stringify(this.state));
       event.preventDefault();
+      this.props.login();
     }
   
     render() {
@@ -44,3 +48,13 @@ export default class LoginComponent extends React.Component {
       );
     }
   }
+
+  LoginComponent.propTypes = {
+    login: PropTypes.func.isRequired
+  }
+  
+  const mapStateToProps = state => ({
+    login: PropTypes.func.isRequired
+  }); 
+  
+  export default connect(mapStateToProps, {login})(LoginComponent);

@@ -12,27 +12,21 @@
 header {
   position: relative;
   overflow: hidden;
-<<<<<<< HEAD
   // flex-basis: 30vh;
   background-color: rgb(221, 105, 105);
-=======
   flex-basis: 20vh;
   font-family: $roboto;
   background-color: $secnd-color-dark;
   color: white;
->>>>>>> 402d315c47c78d120630e28ef3c80453f4db900a
   text-align: center;
 }
 
 nav {
-<<<<<<< HEAD
   background-color: rgb(168, 148, 148);
-=======
   background-color: $prim-color-normal;
   font-family: $roboto;
   color: white;
   padding: 20px;
->>>>>>> 402d315c47c78d120630e28ef3c80453f4db900a
 }
 
 main {
