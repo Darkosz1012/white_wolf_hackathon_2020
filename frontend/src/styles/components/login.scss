@@ -8,7 +8,7 @@
     justify-content: space-around;
     text-align: center;
     position: absolute;
-    color: $prim-color-light;
+    color: $prim-color-normal;
     left: calc(50% - 15rem);
     width: 34rem;
     box-sizing: border-box;
@@ -35,9 +35,9 @@
             padding: .3rem .8rem;
             font-size: 1.2rem;
             float: right;
-            background: $prim-color-normal;
-            color: black;
-            border: 2px solid $prim-color-light;
+            color: white;
+            background: none;
+            border: 2px solid $prim-color-normal;
             border-radius: 2rem;
             @media screen and (max-width: 34rem) {
                 float: none;
@@ -53,9 +53,9 @@
         font-size: 1.2rem;
         border-radius: 2rem;
         margin-top: 1rem;
-        background: none;
-        border: 2px solid $prim-color-light;
-        color: $prim-color-light;
+        background: $prim-color-normal;
+        border: 2px solid $prim-color-normal;
+        color: white;
         width: 26rem;
         @media screen and (max-width: 34rem) {
             width: 50%;
