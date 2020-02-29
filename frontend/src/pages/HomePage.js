@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMock } from '../actions/mockAction';
+import LoginComponent from '../components/LoginComponent';
 
 const HomePage = props => {
 
@@ -17,6 +18,7 @@ const HomePage = props => {
     <div className="home">
       Home Page
       {items}
+      <LoginComponent></LoginComponent>
     </div>
   );
 }
