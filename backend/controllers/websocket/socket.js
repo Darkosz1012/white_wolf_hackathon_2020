@@ -38,6 +38,13 @@ module.exports = function(io){
 
                 io.sockets.to(opponent.socket).emit("found", obj);
                 socket.emit('found', obj);
+                databaseObj = {
+                    team1:data.team,
+                    team2:opponent.data.team,
+                    location: data.location,
+                    date: data.date
+                }
+                apiDatabase.model.matchMaking.insert(databaseObj);
             }
             
         });
