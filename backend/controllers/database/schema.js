@@ -65,6 +65,26 @@ module.exports = {
         name: {type: String, required: true},
         icon: {type: String, required: true}
         
-    })
+    }),
+    customMatch: new mongoose.Schema({
+        team1:[{
+            _id: {type: mongoose.Schema.Types.ObjectId, required: true},
+            username:{type: String, required: true},
+            accept:{type:Boolean, default:false}
+        }],
+        team2:[{
+            _id: {type: mongoose.Schema.Types.ObjectId, required: true},
+            username:{type: String, required: true},
+            accept:{type:Boolean, default:false}
+        }],
+        sport:{
+            _id: {type: mongoose.Schema.Types.ObjectId, required: true},
+            name: {type: String, required: true},
+            icon: {type: String, required: true}
+        },
+        location: {type: String, required: true},
+        date: {type:Date, required: true}
+        
+    }),
 
 }
