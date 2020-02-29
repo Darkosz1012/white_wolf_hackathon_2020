@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import { fetchMock } from '../actions/mockAction';
 import { fetchUser } from '../actions/userActions';
 import LoginComponent from '../components/LoginComponent';
-import StatisticComponent from '../components/StatisticComponent';
+import CardComponent from '../components/CardComponent';
+import MatchSummaryComponent from '../components/MatchSummaryComponent';
 
 const HomePage = props => {
 
@@ -27,7 +28,8 @@ const HomePage = props => {
       <button onClick={handleUserFetch}>GET USER</button>
       {items}
       <LoginComponent></LoginComponent>
-      <StatisticComponent />
+      <CardComponent />
+      <MatchSummaryComponent/>
     </div>
   );
 }

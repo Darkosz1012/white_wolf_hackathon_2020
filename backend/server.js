@@ -13,7 +13,7 @@ var database = require('./controllers/database/api')
 app.use(cors());
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-
+io.set('origins', '*:*');
 var socket = require("./controllers/websocket/socket");
 socket(io)
 
