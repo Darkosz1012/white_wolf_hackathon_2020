@@ -4,11 +4,11 @@ const apiRoutesFunction = require("./default")
 
 var mainRouter = express.Router();
 
-var apiDashboardRoutes = apiRoutesFunction(database.model.dashboard)
-mainRouter.use('/dashboard', apiDashboardRoutes);
+var apiSportRoutes = apiRoutesFunction(database.model.sport)
+mainRouter.use('/sport', apiSportRoutes);
 
-var apiListRoutes = apiRoutesFunction(database.model.list)
-mainRouter.use('/list', apiListRoutes);
+var apiMatchMakingRoutes = apiRoutesFunction(database.model.matchMaking)
+mainRouter.use('/matchmaking', apiMatchMakingRoutes);
 
 var apiUserRoutes = apiRoutesFunction(database.model.user)
 mainRouter.use('/user', apiUserRoutes);
