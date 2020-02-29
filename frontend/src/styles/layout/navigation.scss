@@ -4,13 +4,15 @@
     flex-direction: row;
     justify-content: space-around;
     list-style-type: none;
+    padding: 10px;
     li {
       a {
         text-decoration: none;
-        color: yellow;
         font-size: 2em;
         width: 100%;
-        padding: 20px;
+        .nav_img {
+          width: 48px;
+        }
       }
     }
   }

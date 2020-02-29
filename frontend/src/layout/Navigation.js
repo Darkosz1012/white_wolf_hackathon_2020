@@ -1,29 +1,37 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/layout/navigation.scss';
+import homeImg from '../images/home.png';
+import userImg from '../images/user.png';
+import listImg from '../images/list.png';
 
 const menuList = [
   {
     id: 0,
     name: 'home',
-    path: '/'
+    path: '/',
+    img: homeImg
   },
   {
     id: 1,
-    name: 'contact',
-    path: '/contact'
+    name: 'user',
+    path: '/user',
+    img: userImg
   },
   {
     id: 2,
-    name: 'about',
-    path: '/about'
+    name: 'list',
+    path: '/list',
+    img: listImg
   }
 ];
 
 const Navigation = () => {
   const menu = menuList.map(item => (
     <li key={item.id}>
-      <NavLink to={item.path} exact>{item.name}</NavLink>
+      <NavLink to={item.path} exact>
+        <img src={item.img} alt="" className="nav_img"/>
+      </NavLink>
     </li>
   ));
 

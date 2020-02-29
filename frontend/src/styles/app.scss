@@ -1,31 +1,46 @@
+@import 'utils/variables.scss';
+
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: $roboto;
+  background-color: $prim-color-dark;
+  color: white;
 }
 
 header {
   position: relative;
   overflow: hidden;
-  flex-basis: 20vh;
+  // flex-basis: 30vh;
   background-color: rgb(221, 105, 105);
+  flex-basis: 20vh;
+  font-family: $roboto;
+  background-color: $secnd-color-dark;
+  color: white;
   text-align: center;
 }
 
 nav {
   background-color: rgb(168, 148, 148);
+  background-color: $prim-color-normal;
+  font-family: $roboto;
+  color: white;
   padding: 20px;
 }
 
 main {
   flex-grow: 1;
   padding: 20px;
-  background-color: rgb(138, 206, 138);
+  background-color: $prim-color-dark;
+  font-family: $roboto;
+  color: white;
   display: flex;
 }
 
 footer {
-  background-color: rgb(51, 51, 51);
+  background-color: $prim-color-normal;
+  font-family: $roboto;
   color: white;
   padding: 10px;
   text-align: center;
