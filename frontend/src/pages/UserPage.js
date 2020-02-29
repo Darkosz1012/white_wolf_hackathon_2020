@@ -6,10 +6,12 @@ import photo from '../images/profile.png';
 import PersonalData from '../components/PersonalData';
 
 const UserPage = (props) => {
-  const info = props.user.name ? <PersonalData 
-    firstName={props.user.name.first}
-    lastName={props.user.name.last}
-    since={props.user.registered.date} 
+  console.log(props);
+  const info = props.user.username ? <PersonalData 
+    username={props.user.username}
+    firstName={props.user.firstname}
+    lastName={props.user.lastname}
+    email={props.user.email} 
     /> : null;
   return(
     <div className="userPage">
@@ -26,7 +28,7 @@ UserPage.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  user: state.user.data
+  user: state.login.user
 }); 
 
 export default connect(mapStateToProps, {})(UserPage);
