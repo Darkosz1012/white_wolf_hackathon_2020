@@ -2,6 +2,7 @@ import { FETCH_USERS, SET_USER, ADD_USER } from '../actions/types';
 
 const initialState = {
   data: [],
+  logged: {},
   isLogged: false,
   room: []
 };
@@ -14,10 +15,11 @@ export default function(state = initialState, action) {
         data: action.payload
       };
     case SET_USER:
+      console.log(action.payload);
       return {
         ...state,
         isLogged: true,
-        data: action.payload
+        logged: action.payload.data
       }
     case ADD_USER:
       console.log("ad");

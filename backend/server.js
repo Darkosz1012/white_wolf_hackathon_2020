@@ -3,7 +3,7 @@ const PORT = process.env.PORT || 3000;
 
 const express = require('express');
 var app = express();
-app.use(require('body-parser').json());
+const bodyParser = require('body-parser');
 var cors = require('cors');
 
 
@@ -11,6 +11,10 @@ var cors = require('cors');
 var database = require('./controllers/database/api')
 
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.raw());
+
 var server = require('http').Server(app);
 var io = require('socket.io')(server, { origins: '*:*'});
 var socket = require("./controllers/websocket/socket");
