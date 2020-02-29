@@ -4,8 +4,9 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow: hidden;
   font-family: $roboto;
-  background-color: $prim-color-dark;
+  background-color: $prim-gray-dark;
   color: white;
 }
 
@@ -23,7 +24,7 @@ header {
 
 nav {
   background-color: rgb(168, 148, 148);
-  background-color: $prim-color-normal;
+  background-color: $prim-gray-normal;
   font-family: $roboto;
   color: white;
   padding: 20px;
@@ -32,14 +33,15 @@ nav {
 main {
   flex-grow: 1;
   padding: 20px;
-  background-color: $prim-color-dark;
+  background-color: $prim-gray-dark;
+  background-image: linear-gradient(15rad, #30cfd0 0%, #330867 100%);  
   font-family: $roboto;
   color: white;
   display: flex;
 }
 
 footer {
-  background-color: $prim-color-normal;
+  background-color: $prim-gray-normal;
   font-family: $roboto;
   color: white;
   padding: 10px;

@@ -48,6 +48,9 @@ module.exports = function(io){
             }
             
         });
+        socket.on("custom match",function(data){
+            
+        })
 
     });
 }

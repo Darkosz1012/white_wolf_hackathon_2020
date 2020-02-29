@@ -2,6 +2,8 @@ const express = require("express");
 const database = require("../database/api");
 const apiRoutesFunction = require("./default")
 
+// const user= require("./user")(database.model.user)
+
 var mainRouter = express.Router();
 
 var apiSportRoutes = apiRoutesFunction(database.model.sport)

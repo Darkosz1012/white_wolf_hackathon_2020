@@ -5,7 +5,9 @@ import { connect } from 'react-redux';
 import { fetchMock } from '../actions/mockAction';
 import { fetchUsers } from '../actions/userActions';
 import LoginComponent from '../components/LoginComponent';
-import StatisticComponent from '../components/StatisticComponent';
+import CardComponent from '../components/CardComponent';
+import CardForm from '../components/CardForm';
+import MatchSummaryComponent from '../components/MatchSummaryComponent';
 
 const HomePage = props => {
 
@@ -21,13 +23,17 @@ const HomePage = props => {
     props.fetchUsers();
   }
 
+  var arr=[{name:"Bieganie"}, {name:"Piłka nożna"}, {name:"Strzelectwo"}]
+
   return(
     <div className="home">
       Home Page
       <button onClick={handleUserFetch}>GET USER</button>
       {/* {items} */}
       <LoginComponent></LoginComponent>
-      <StatisticComponent />
+      <CardComponent />
+      <MatchSummaryComponent/>
+      <CardForm sports={arr}/>
     </div>
   );
 }

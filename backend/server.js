@@ -6,16 +6,15 @@ var app = express();
 app.use(require('body-parser').json());
 var cors = require('cors');
 
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
 
-var socket = require("./controllers/websocket/socket");
-socket(io)
 
 var database = require('./controllers/database/api')
 
 app.use(cors());
-
+var server = require('http').Server(app);
+var io = require('socket.io')(server, { origins: '*:*'});
+var socket = require("./controllers/websocket/socket");
+socket(io)
 
 // database.connect().then(function(ms){
 //     console.log(ms)
