@@ -17,18 +17,18 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <div className="app">
-          <header>
+          {/* <header>
             <Header />
-          </header>
+          </header> */}
           <nav>
             <Navigation />
           </nav>
           <main>
               <Page />
           </main>
-          <footer>
+          {/* <footer>
             <Footer />
-          </footer>
+          </footer> */}
         </div>
       </Router>
     </Provider>
