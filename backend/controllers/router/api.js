@@ -2,7 +2,7 @@ const express = require("express");
 const database = require("../database/api");
 const apiRoutesFunction = require("./default")
 
-const user= require("./user")(database.model.user)
+// const user= require("./user")(database.model.user)
 
 var mainRouter = express.Router();
 
@@ -13,6 +13,6 @@ var apiMatchMakingRoutes = apiRoutesFunction(database.model.matchMaking)
 mainRouter.use('/matchmaking', apiMatchMakingRoutes);
 
 var apiUserRoutes = apiRoutesFunction(database.model.user)
-mainRouter.use('/user', user);
+mainRouter.use('/user', apiUserRoutes);
 
 module.exports = mainRouter

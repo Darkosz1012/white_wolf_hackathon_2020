@@ -29,7 +29,7 @@ module.exports = function(model){
     })
     apiRoutes.get("/", function(req, res){
         var data = req.query || req.body;
-        model.find(data, function(err, data){
+        model.findOne(data, function(err, data){
             if (err) return handleError(res,err);
             if(data.length == 0){
                 return handleError(res,{errmsg:"Don't found"});
