@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: $roboto;
   background-color: $prim-color-dark;
   color: white;
 }
@@ -12,6 +13,7 @@ header {
   position: relative;
   overflow: hidden;
   flex-basis: 20vh;
+  font-family: $roboto;
   background-color: $secnd-color-dark;
   color: white;
   text-align: center;
@@ -19,6 +21,7 @@ header {
 
 nav {
   background-color: $prim-color-normal;
+  font-family: $roboto;
   color: white;
   padding: 20px;
 }
@@ -27,12 +30,14 @@ main {
   flex-grow: 1;
   padding: 20px;
   background-color: $prim-color-dark;
+  font-family: $roboto;
   color: white;
   display: flex;
 }
 
 footer {
   background-color: $prim-color-normal;
+  font-family: $roboto;
   color: white;
   padding: 10px;
   text-align: center;

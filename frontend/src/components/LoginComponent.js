@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/components/login.scss';
 
 
 export default class LoginComponent extends React.Component {
@@ -29,7 +30,7 @@ export default class LoginComponent extends React.Component {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="loginForm">
           <label>
             Login:
             <input name="login" type="text"  onChange={this.handleInputChange}/>
