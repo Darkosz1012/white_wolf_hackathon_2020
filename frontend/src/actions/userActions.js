@@ -1,11 +1,26 @@
-import { FETCH_USER } from './types';
+import { FETCH_USERS, SET_USER, ADD_USER } from './types';
 
-export const fetchUser = (id) => dispatch => {
-  fetch('https://randomuser.me/api/')
+
+export const fetchUsers = (id) => dispatch => {
+  fetch('https://white-wolf.herokuapp.com/user/')
     .then(res => res.json())
-    .then(user => dispatch({
-      type: FETCH_USER,
-      payload: user.results[0]
+    .then(users => dispatch({
+      type: FETCH_USERS,
+      payload: users.data
     })
   );
+};
+
+export const setUser = (user) => dispatch => {
+  dispatch({
+    type: SET_USER,
+    payload: user
+  })
+};
+
+export const addUser = (user) => dispatch => {
+  dispatch({
+    type: ADD_USER,
+    payload: user
+  })
 };

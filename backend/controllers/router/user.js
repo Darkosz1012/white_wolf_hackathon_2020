@@ -29,17 +29,7 @@ module.exports = function(model){
     })
     apiRoutes.get("/", function(req, res){
         var data = req.query || req.body;
-        model.find(data, function(err, data){
-            if (err) return handleError(res,err);
-            if(data.length == 0){
-                return handleError(res,{errmsg:"Don't found"});
-            }
-            handleSuccess(res, data);
-        })
-    })
-    apiRoutes.get("/one", function(req, res){
-        var data = req.query || req.body;
-        model.findOne(data, function(err, data){
+        model.find({username: new RegExp('^'+data.username+'$', "i") }, function(err, data){
             if (err) return handleError(res,err);
             if(data.length == 0){
                 return handleError(res,{errmsg:"Don't found"});

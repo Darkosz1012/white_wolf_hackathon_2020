@@ -1,8 +1,13 @@
 import React from 'react';
 import '../styles/components/login.scss';
-import io from 'socket.io'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { login } from '../actions/loginActions';
 
-export default class LoginComponent extends React.Component {
+
+// import io from 'socket.io'
+
+class LoginComponent extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -26,13 +31,15 @@ export default class LoginComponent extends React.Component {
     handleSubmit(event) {
       // alert(JSON.stringify(this.state));
       event.preventDefault();
-      var socket = io().connect("http://localhost:3000/");
-      socket.emit('login', state);
-      io.on('connection', function(socket){
-        socket.on('login', function(msg){
-          console.log('message: ' + msg);
-        });
-      });
+      this.props.login(this.state.login, this.state.password);
+      // var socket = io().connect("http://localhost:3000/");
+      // socket.emit('login', state);
+      // io.on('connection', function(socket){
+      //   socket.on('login', function(msg){
+      //     console.log('message: ' + msg);
+      //   });
+      // });
+    
       
     }
   
@@ -52,3 +59,13 @@ export default class LoginComponent extends React.Component {
       );
     }
   }
+
+  LoginComponent.propTypes = {
+    login: PropTypes.func.isRequired
+  }
+  
+  const mapStateToProps = state => ({
+    login: PropTypes.func.isRequired
+  }); 
+  
+  export default connect(mapStateToProps, {login})(LoginComponent);
