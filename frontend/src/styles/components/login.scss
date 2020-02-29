@@ -1,19 +1,37 @@
+@import '../utils/variables.scss';
+
 .loginForm{
+    font-size: 1.5rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
     position: absolute;
-    left: calc(50% - 11rem);
-    width: 20rem;
-    height: 10rem;
+    color: $prim-color-light;
+    left: calc(50% - 15rem);
+    width: 30rem;
+    height: 15rem;
     label{
-        width: 18rem;
+        width: 26rem;
         text-align: left;
+        line-height: 2.4rem;
         input{
+            padding: .3rem .8rem;
+            font-size: 1.2rem;
             float: right;
-            margin-right: 2rem;
+            background: $prim-color-normal;
+            color: black;
+            border: 2px solid $prim-color-light;
+            border-radius: 2rem;
         }
+    }
+    &>input{
+        padding: .3rem;
+        font-size: 1.2rem;
+        border-radius: 2rem;
+        background: none;
+        border: 2px solid $prim-color-light;
+        color: $prim-color-light;
     }
 }
