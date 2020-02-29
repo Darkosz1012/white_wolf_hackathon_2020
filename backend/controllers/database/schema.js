@@ -31,16 +31,23 @@ module.exports = {
                 type:{type: String, required: true},
                 content:{type: String, required: true}
             }]
+        }],
+        singleScore:[{
+            value: {type: Number, required: true},
+            location: {type: String, required: false},
+            date: {type:Date, required: true}
         }]
     }),
     matchMaking: new mongoose.Schema({
         team1:[{
             _id: {type: mongoose.Schema.Types.ObjectId, required: true},
-            username:{type: String, required: true}
+            username:{type: String, required: true},
+            accept:{type:Boolean, default:false}
         }],
         team2:[{
             _id: {type: mongoose.Schema.Types.ObjectId, required: true},
-            username:{type: String, required: true}
+            username:{type: String, required: true},
+            accept:{type:Boolean, default:false}
         }],
         sport:{
             _id: {type: mongoose.Schema.Types.ObjectId, required: true}
@@ -54,5 +61,5 @@ module.exports = {
         icon: {type: String, required: true},
         
     })
-    
+
 }

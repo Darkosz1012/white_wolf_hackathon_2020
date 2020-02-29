@@ -29,7 +29,7 @@ class LoginComponent extends React.Component {
     handleSubmit(event) {
       // alert(JSON.stringify(this.state));
       event.preventDefault();
-      this.props.login();
+      this.props.login(this.state.login, this.state.password);
     }
   
     render() {

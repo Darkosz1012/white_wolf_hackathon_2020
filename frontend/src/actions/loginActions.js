@@ -4,7 +4,10 @@ import secret from '../private/password.json';
 
 
 export const login = (login, password) => dispatch => {
-  if (login !== secret.login && password !== secret.password) {
+  console.log('login try');
+  console.log(login, password);
+  console.log(login === secret.login, password === secret.password);
+  if (login !== secret.login || password !== secret.password) {
     return;
   }
   console.log("logged");
