@@ -3,9 +3,7 @@ import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMock } from '../actions/mockAction';
-<<<<<<< HEAD
 import { fetchUser } from '../actions/userActions';
-=======
 import LoginComponent from '../components/LoginComponent';
 import StatisticComponent from '../components/StatisticComponent';
 
