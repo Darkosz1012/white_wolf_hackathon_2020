@@ -3,11 +3,9 @@ import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMock } from '../actions/mockAction';
-<<<<<<< HEAD
 import { fetchUser } from '../actions/userActions';
-=======
 import LoginComponent from '../components/LoginComponent';
->>>>>>> 402d315c47c78d120630e28ef3c80453f4db900a
+import StatisticComponent from '../components/StatisticComponent';
 
 const HomePage = props => {
 
@@ -29,6 +27,7 @@ const HomePage = props => {
       <button onClick={handleUserFetch}>GET USER</button>
       {items}
       <LoginComponent></LoginComponent>
+      <StatisticComponent />
     </div>
   );
 }
