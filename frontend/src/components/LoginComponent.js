@@ -29,17 +29,8 @@ class LoginComponent extends React.Component {
       }
   
     handleSubmit(event) {
-      // alert(JSON.stringify(this.state));
       event.preventDefault();
       this.props.login(this.state.login, this.state.password);
-      // var socket = io().connect("http://localhost:3000/");
-      // socket.emit('login', state);
-      // io.on('connection', function(socket){
-      //   socket.on('login', function(msg){
-      //     console.log('message: ' + msg);
-      //   });
-      // });
-    
       
     }
   
