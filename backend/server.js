@@ -9,16 +9,19 @@ var cors = require('cors');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
+var socket = require("./controllers/websocket/socket");
+socket(io)
+
 var database = require('./controllers/database/api')
 
 app.use(cors());
 
 
-database.connect().then(function(ms){
-    console.log(ms)
-}).catch(function(ms){
-    console.log(ms)
-})
+// database.connect().then(function(ms){
+//     console.log(ms)
+// }).catch(function(ms){
+//     console.log(ms)
+// })
 
 var mainRoutes = require("./controllers/router/api");
 app.use('/', mainRoutes);
