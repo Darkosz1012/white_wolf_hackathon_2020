@@ -2,8 +2,11 @@ var mongoose = require('mongoose');
 
 module.exports = {
     user: new mongoose.Schema({
+        firstname: {type: String, required: true},
+        lastname: {type: String, required: true},
+        email: {type: String, required: true},
         username: {type: String, required: true,unique: true},
-        password: {type: String, required: true,unique: true},
+        password: {type: String, required: true},
         friends: [{
             _id: {type: mongoose.Schema.Types.ObjectId, required: true},
             username:{type: String, required: true}
@@ -50,7 +53,9 @@ module.exports = {
             accept:{type:Boolean, default:false}
         }],
         sport:{
-            _id: {type: mongoose.Schema.Types.ObjectId, required: true}
+            _id: {type: mongoose.Schema.Types.ObjectId, required: true},
+            name: {type: String, required: true},
+            icon: {type: String, required: true}
         },
         location: {type: String, required: true},
         date: {type:Date, required: true}
@@ -58,7 +63,7 @@ module.exports = {
     }),
     sport: new mongoose.Schema({
         name: {type: String, required: true},
-        icon: {type: String, required: true},
+        icon: {type: String, required: true}
         
     })
 

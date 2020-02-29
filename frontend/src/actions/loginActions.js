@@ -4,18 +4,23 @@ import secret from '../private/password.json';
 
 
 export const login = (login, password) => dispatch => {
-  console.log('login try');
-  console.log(login, password);
-  console.log(login === secret.login, password === secret.password);
-  if (login !== secret.login || password !== secret.password) {
-    return;
-  }
-  console.log("logged");
-  fetch('https://randomuser.me/api/?results=10')
+  fetch('https://white-wolf.herokuapp.com/user/one', {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      'username': `${login}`,
+      'password': `${password}`
+    },
+    referrerPolicy: 'no-referrer',
+  })
     .then(res => res.json())
-    .then(data => dispatch({
-      type: LOGIN,
-      payload: data
-    })
+    .then(data => {
+      console.log(data);
+      return dispatch({
+        type: LOGIN,
+        payload: data
+      });
+    }
   );
 };

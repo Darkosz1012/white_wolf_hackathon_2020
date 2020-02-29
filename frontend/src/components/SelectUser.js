@@ -5,22 +5,21 @@ const items = ["Gruszka", "Japko", "Sianko", "Morela", "Ananas", "papier", "beto
  const SelectUser = props => {
   const [userID, setUserID] = useState("");
   const [search, setSearch] = useState("");
-  const [matches, setMatches] = useState([]);
 
   const handleInputChange = e => {
     const value = e.target.value;
     const name = e.target.name;
-
+    console.log("props: ", props);
     switch(name) {
       case "search":
         setSearch(value);
         if (value.length !== 0) {
-          setMatches(() => {
+          props.setMatches(() => {
             const reg = new RegExp(value);
-            return items.filter(item => item.toLowerCase().match(reg, "gi"));
+            return props.users.filter(item => item.username.toLowerCase().match(reg, "gi"));
           })
         } else {
-          setMatches([]);
+          props.setMatches([]);
         }
         break;
       case "user_id":
@@ -50,13 +49,18 @@ const items = ["Gruszka", "Japko", "Sianko", "Morela", "Ananas", "papier", "beto
       <br/> */}
       <form onSubmit={handleSubmit}>
         <label>search: 
-          <input type="text" name="search" value={search} onChange={handleInputChange}/>
+          <input type="text" name="search" list="users" value={search} onChange={handleInputChange} />
+          <datalist id="users">
+            {props.users.map(user => (
+              <option value={user.username}/>
+            ))}
+          </datalist>
         </label>
-        <ul>
+        {/* <ul>
           {matches.map(item => (
             <li key={item}>{item}<button onClick={addToGame}>+</button></li>
           ))}
-        </ul>
+        </ul> */}
       </form>
     </div>
   )

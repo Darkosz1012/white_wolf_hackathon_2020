@@ -10,12 +10,27 @@
     position: absolute;
     color: $prim-color-light;
     left: calc(50% - 15rem);
-    width: 30rem;
+    width: 34rem;
+    box-sizing: border-box;
     height: 15rem;
+    @media screen and (max-width: 34rem) {
+        display: block;
+        width: 100%;
+        padding: 0;
+        left: 0;
+        box-sizing: border-box;
+    }
     label{
+        max-width: 26rem;
         width: 26rem;
-        text-align: left;
         line-height: 2.4rem;
+        box-sizing: border-box;
+        @media screen and (max-width: 34rem) {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 2rem;
+        }
         input{
             padding: .3rem .8rem;
             font-size: 1.2rem;
@@ -24,14 +39,27 @@
             color: black;
             border: 2px solid $prim-color-light;
             border-radius: 2rem;
+            @media screen and (max-width: 34rem) {
+                float: none;
+                margin: 0 auto;
+                display: block;
+                font-size: 1rem;
+            }
         }
+        
     }
     &>input{
         padding: .3rem;
         font-size: 1.2rem;
         border-radius: 2rem;
+        margin-top: 1rem;
         background: none;
         border: 2px solid $prim-color-light;
         color: $prim-color-light;
+        width: 26rem;
+        @media screen and (max-width: 34rem) {
+            width: 50%;
+        }
+        box-sizing: border-box;
     }
 }

@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { login } from '../actions/loginActions';
 
+// import io from 'socket.io'
 
 class LoginComponent extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        login: '',
+        username: '',
         password:''
       };
   
@@ -30,6 +31,14 @@ class LoginComponent extends React.Component {
       // alert(JSON.stringify(this.state));
       event.preventDefault();
       this.props.login(this.state.login, this.state.password);
+      // var socket = io().connect("http://localhost:3000/");
+      // socket.emit('login', state);
+      // io.on('connection', function(socket){
+      //   socket.on('login', function(msg){
+      //     console.log('message: ' + msg);
+      //   });
+      // });
+      
     }
   
     render() {
@@ -37,13 +46,13 @@ class LoginComponent extends React.Component {
         <form onSubmit={this.handleSubmit} className="loginForm">
           <label>
             Login:
-            <input name="login" type="text"  onChange={this.handleInputChange}/>
+            <input name="username" type="text"  onChange={this.handleInputChange}/>
           </label>
           <label>
             Password:
             <input name="password" type="password"  onChange={this.handleInputChange}/>
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" onClick={this.handleSubmit}/>
         </form>
       );
     }

@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMock } from '../actions/mockAction';
-import { fetchUser } from '../actions/userActions';
+import { fetchUsers } from '../actions/userActions';
 import LoginComponent from '../components/LoginComponent';
 import StatisticComponent from '../components/StatisticComponent';
 
@@ -18,7 +18,7 @@ const HomePage = props => {
   )) : [];
 
   const handleUserFetch = () => {
-    props.fetchUser();
+    props.fetchUsers();
   }
 
   return(
@@ -34,7 +34,7 @@ const HomePage = props => {
 
 HomePage.propTypes = {
   fetchMock: PropTypes.func.isRequired,
-  fetchUser: PropTypes.func.isRequired,
+  fetchUsers: PropTypes.func.isRequired,
   mock: PropTypes.array.isRequired,
 }
 
@@ -42,4 +42,4 @@ const mapStateToProps = state => ({
   mock: state.mock.mock
 }); 
 
-export default connect(mapStateToProps, { fetchMock, fetchUser })(HomePage);
+export default connect(mapStateToProps, { fetchMock, fetchUsers })(HomePage);
