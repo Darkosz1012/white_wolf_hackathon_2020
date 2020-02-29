@@ -6,6 +6,7 @@ import { fetchMock } from '../actions/mockAction';
 import { fetchUser } from '../actions/userActions';
 import LoginComponent from '../components/LoginComponent';
 import CardComponent from '../components/CardComponent';
+import CardForm from '../components/CardForm';
 import MatchSummaryComponent from '../components/MatchSummaryComponent';
 
 const HomePage = props => {
@@ -22,6 +23,8 @@ const HomePage = props => {
     props.fetchUser();
   }
 
+  var arr=[{name:"Bieganie"}, {name:"Piłka nożna"}, {name:"Strzelectwo"}]
+
   return(
     <div className="home">
       Home Page
@@ -30,6 +33,7 @@ const HomePage = props => {
       <LoginComponent></LoginComponent>
       <CardComponent />
       <MatchSummaryComponent/>
+      <CardForm sports={arr}/>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/components/login.scss';
-import io from 'socket.io'
+
 
 export default class LoginComponent extends React.Component {
     constructor(props) {
@@ -26,13 +26,7 @@ export default class LoginComponent extends React.Component {
     handleSubmit(event) {
       // alert(JSON.stringify(this.state));
       event.preventDefault();
-      var socket = io().connect("http://localhost:3000/");
-      socket.emit('login', state);
-      io.on('connection', function(socket){
-        socket.on('login', function(msg){
-          console.log('message: ' + msg);
-        });
-      });
+    
       
     }
   
