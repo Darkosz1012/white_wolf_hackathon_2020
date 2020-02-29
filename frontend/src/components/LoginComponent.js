@@ -1,12 +1,12 @@
 import React from 'react';
 import '../styles/components/login.scss';
-
+import io from 'socket.io'
 
 export default class LoginComponent extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        login: '',
+        username: '',
         password:''
       };
   
@@ -24,8 +24,16 @@ export default class LoginComponent extends React.Component {
       }
   
     handleSubmit(event) {
-      alert(JSON.stringify(this.state));
+      // alert(JSON.stringify(this.state));
       event.preventDefault();
+      var socket = io().connect("http://localhost:3000/");
+      socket.emit('login', state);
+      io.on('connection', function(socket){
+        socket.on('login', function(msg){
+          console.log('message: ' + msg);
+        });
+      });
+      
     }
   
     render() {
@@ -33,13 +41,13 @@ export default class LoginComponent extends React.Component {
         <form onSubmit={this.handleSubmit} className="loginForm">
           <label>
             Login:
-            <input name="login" type="text"  onChange={this.handleInputChange}/>
+            <input name="username" type="text"  onChange={this.handleInputChange}/>
           </label>
           <label>
             Password:
             <input name="password" type="password"  onChange={this.handleInputChange}/>
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" onClick={this.handleSubmit}/>
         </form>
       );
     }
