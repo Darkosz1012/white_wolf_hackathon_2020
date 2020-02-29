@@ -28,7 +28,7 @@ module.exports = function(model){
         })
     })
     apiRoutes.get("/", function(req, res){
-        var data = req.query || req.body;
+        var data = req.body || req.query;
         model.find(data, function(err, data){
             if (err) return handleError(res,err);
             if(data.length == 0){
@@ -37,8 +37,8 @@ module.exports = function(model){
             handleSuccess(res, data);
         })
     })
-    apiRoutes.get("/one", function(req, res){
-        var data = req.query || req.body;
+    apiRoutes.post("/login", function(req, res){
+        var data = req.body || req.query;
         model.findOne(data, function(err, data){
             if (err) return handleError(res,err);
             if(data.length == 0){
@@ -48,7 +48,7 @@ module.exports = function(model){
         })
     })
     apiRoutes.delete("/", function(req, res){
-        var data = req.query || req.body;
+        var data = req.body || req.query;
         model.deleteOne(data, function(err, data){
             if (err) return handleError(res,err);
             if(data.length == 0){
@@ -59,7 +59,7 @@ module.exports = function(model){
     })
     apiRoutes.patch("/", function(req, res){
 
-        var data =  req.body;
+        var data =  req.body || req.query;
 
         model.findOneAndUpdate({_id: data._id}, data,{ new: true },   function(err, data){
             if (err) return handleError(res,err);
