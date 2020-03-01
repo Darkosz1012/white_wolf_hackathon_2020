@@ -19,6 +19,7 @@ export const setUser = (user) => dispatch => {
 };
 
 export const addUser = (user) => dispatch => {
+  console.log("ADDING SER");
   dispatch({
     type: ADD_USER,
     payload: user

@@ -4,7 +4,8 @@
     display: flex;
     width: 100%;
     position: absolute;
-    height: 80vh;
+    max-height: 80vh;
+    min-height: 30vh;
     left: 0;
     align-items: center;
     flex-direction: column;
@@ -45,7 +46,7 @@
         overflow: hidden;
         @media screen and (max-width: 34rem) {
             width: 90%;
-            margin: 0 auto;
+            margin: 1rem auto;
             text-align: center;
             line-height: 2rem;
         }
@@ -66,8 +67,21 @@
         }
         
     }
-    &>label:last-child{
+    &>input:last-child{
         overflow: hidden;
         display: block;
+        padding: .3rem .8rem;
+        font-size: 1.2rem;
+        float: right;
+        color: white;
+        background: none;
+        border: 2px solid $prim-color-normal;
+        border-radius: 2rem;
+        @media screen and (max-width: 34rem) {
+            float: none;
+            margin: 0 auto;
+            display: block;
+            font-size: 1rem;
+        }
     }
 }
