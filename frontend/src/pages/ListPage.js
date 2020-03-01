@@ -3,6 +3,7 @@ import SelectUser from '../components/SelectUser';
 import { fetchUsers, addUser } from '../actions/userActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import DisciplineComponent from '../components/DisciplineComponent';
 // import '../styles/pages/ContactPage.scss';
 
 const ListPage = props => {
@@ -42,6 +43,7 @@ const ListPage = props => {
       {matched}
       <h3>PLAYERS:</h3>
       {selected}
+      <DisciplineComponent discipline={{}}></DisciplineComponent>
     </div>
   );
 }

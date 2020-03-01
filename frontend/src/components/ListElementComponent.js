@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/components/statisticComponent.scss';
+import '../styles/components/listElementComponent.scss';
 
 
-const StatisticComponent = (props)=> {
+const ListElementComponent = (props)=> {
   
     console.log(props)
       return (
@@ -13,4 +13,4 @@ const StatisticComponent = (props)=> {
       );
     }
 
-  export default StatisticComponent;
+  export default ListElementComponent;
